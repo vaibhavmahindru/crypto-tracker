@@ -2,6 +2,7 @@
   "name": "crypto-tracker",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://vaibhavmahindru.github.io/crypto-tracker",
   "dependencies": {
     "@material-ui/core": "^4.12.3",
     "@testing-library/jest-dom": "^5.11.4",
@@ -9,6 +10,7 @@
     "@testing-library/user-event": "^12.1.10",
     "apexcharts": "^3.28.1",
     "axios": "^0.21.4",
+    "gh-pages": "^3.2.3",
     "react": "^17.0.2",
     "react-apexcharts": "^1.3.9",
     "react-dom": "^17.0.2",
@@ -19,7 +21,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
