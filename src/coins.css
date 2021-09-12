@@ -4,3 +4,8 @@
 .green{
     color: green;
 }
+.row-text{
+    font-size: 15px;
+    width: 120px;
+    font-weight: lighter;
+}

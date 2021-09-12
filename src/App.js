@@ -11,12 +11,15 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 
+
 const useStyles = makeStyles({
+  
   table: {
-    minWidth:450,
+    minWidth:"100%",
+    color:"#fff",
+    backgroundColor: "#1a1a1c"
   },
 });
-
 
 function App() {
   const classes = useStyles();
@@ -30,21 +33,21 @@ function App() {
   },[])
   return (
     <div className="App">
-      
-      <TableContainer component={Paper}>
-      <Table className={classes.table} aria-label="simple table">
+      <TableContainer  component={Paper} className="coin-app">
+      <Table className={classes.table} aria-label="simple table" >
         <TableHead>
           <TableRow>
-            <TableCell><p>LOGO</p></TableCell>
-            <TableCell align="right"><p>NAME</p></TableCell>
-            <TableCell align="right"><p>SYMBOL</p></TableCell>
-            <TableCell align="right"><p>CURR PRICE</p></TableCell>
-            <TableCell align="right"><p>1H</p></TableCell>
-            <TableCell align="right"><p>24H</p></TableCell>
-            <TableCell align="right"><p>7d</p></TableCell>
+            <TableCell ></TableCell>
+            <TableCell align="left"><p className="table-heading">COIN</p></TableCell>
+            <TableCell align="left"><p className="table-heading"></p></TableCell>
+            <TableCell align="center"><p className="table-heading">CURR. PRICE</p></TableCell>
+            <TableCell align="center"><p className="table-heading">1H</p></TableCell>
+            <TableCell align="center"><p className="table-heading">24H</p></TableCell>
+            <TableCell align="center"><p className="table-heading">7d</p></TableCell>
+            <TableCell align="center"><p className="table-heading">MKT. VOL.</p></TableCell>
           </TableRow>
         </TableHead>
-        <TableBody>
+        <TableBody className="table-body">
         {
         coins.map(coin => {
           return (
@@ -57,8 +60,7 @@ function App() {
             cp24h={coin.price_change_percentage_24h_in_currency}
             cp7d={coin.price_change_percentage_7d_in_currency}
             image={coin.image}
-            volme={coin.market_cap}
-            sparkLine={coin.sparkline_in_7d.price}
+            marketCap={coin.total_volume}
           />
           )
         })
