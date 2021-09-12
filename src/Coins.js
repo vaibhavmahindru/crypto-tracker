@@ -20,7 +20,7 @@ const Coins = ({
             </TableCell>
             <TableCell align="left"><p className="row-text">{name}</p></TableCell>
             <TableCell align="left"><p className="row-text">{symbol}</p></TableCell>
-            <TableCell align="center"><p className="row-text">₹{currPrice}</p></TableCell>
+            <TableCell align="center"><p className="row-text">₹{currPrice.toLocaleString()}</p></TableCell>
             <TableCell align="center">
                 {cp1h < 0 ? (<p className='coin-percent red row-text'>{cp1h.toFixed(2)}%</p>) : (<p className='coin-percent green row-text'>{cp1h.toFixed(2)}%</p>)}
             </TableCell>
