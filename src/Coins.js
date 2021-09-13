@@ -21,15 +21,15 @@ const Coins = ({
             <TableCell align="left"><p className="row-text">{name}</p></TableCell>
             <TableCell align="left"><p className="row-text">{symbol}</p></TableCell>
             <TableCell align="center"><p className="row-text">₹{currPrice.toLocaleString()}</p></TableCell>
-            <TableCell align="center">
+            {cp1h ? <TableCell align="center">
                 {cp1h < 0 ? (<p className='coin-percent red row-text'>{cp1h.toFixed(2)}%</p>) : (<p className='coin-percent green row-text'>{cp1h.toFixed(2)}%</p>)}
-            </TableCell>
-            <TableCell align="center">
+            </TableCell> : <TableCell align="center"><p className="row-text">NULL</p></TableCell>}
+            {cp24h ? <TableCell align="center">
                 {cp24h < 0 ? (<p className='coin-percent red row-text'>{cp24h.toFixed(2)}%</p>) : (<p className='coin-percent green row-text'>{cp24h.toFixed(2)}%</p>)}
-            </TableCell>
-            <TableCell align="center">
+            </TableCell> : <TableCell align="center"><p className="row-text">NULL</p></TableCell>}
+            {cp7d ? <TableCell align="center">
                 {cp7d < 0 ? (<p className='coin-percent red row-text'>{cp7d.toFixed(2)}%</p>) : (<p className='coin-percent green row-text'>{cp7d.toFixed(2)}%</p>)}
-            </TableCell>
+            </TableCell> : <TableCell align="center"><p className="row-text">NULL</p></TableCell>}
             <TableCell align="center"><p className="row-text">₹{marketCap.toLocaleString()}</p></TableCell>
         </TableRow>
     )
